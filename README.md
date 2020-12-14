@@ -1,6 +1,6 @@
 ## Demo 6 - Easier Method to Perform Histogram Equalization of an Image
 
-In the DataCamp lesson Analyzing Time Series and Images, we learned how to equalize an image using a historgram, which resulted in a sharper image contrast. This process was quite long, and involved plotting a histogram and CDF of the image's pixel values, and using those plots to equalize the image. 
+In the DataCamp lesson *Analyzing Time Series and Images*, we learned how to equalize an image using a historgram, which resulted in a sharper image contrast. This process was quite long, and involved plotting a histogram and CDF of the image's pixel values, and using those plots to equalize the image. 
 
 I found a method of doing the same thing that is simpler and requires fewer steps, so I thought I would share it with you all.  
 
