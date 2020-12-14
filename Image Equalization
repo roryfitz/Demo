@@ -25,12 +25,6 @@ plt.imshow(res, cmap='gray')
 plt.axis('off')
 ```
 
-
-
-
-
-
-
     
 <img src="CT_equalized_grey.png" width="640" />
     
