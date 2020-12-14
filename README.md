@@ -12,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-The next step is to read in the image. For this example I used a CT scan.
+The next step is to read in the image. For this example I used a CT scan showing the axial view of a person's thorax.
 
 ```python
 # read in image and convert to greyscale
