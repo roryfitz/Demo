@@ -4,6 +4,16 @@ In the DataCamp lesson Analyzing Time Series and Images, we learned how to equal
 
 I found a method of doing the same thing that is simpler and requires fewer steps, so I thought I would share it with you all.  
 
+This method requires import of cv2, numpy, and matplotlib.pyplot
+
+```python
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+The next step is to read in the image. For this example I used a CT scan.
+
 ```python
 # read in image and convert to greyscale
 orig = cv2.imread('CT_scan.jpg')
@@ -14,13 +24,23 @@ Some images can be equalized globally using this method, but the image I chose f
 
 CLAHE stands for Contrast Limited Adaptive Histogram Equallization, and means that the image is broken into smaller regions (called tiles) and each tile is adjusted separately from the picture as a whole. After this contrast adjustment, the tiles are joined together using bilinear interpolation. 
 
+The CLAHE code takes two optional arguments:
+- clipLimit
+    - sets the threshold for contrast limiting
+    - default value = 40
+- tileGridSize
+    - sets the number of tiles in the row and column
+    - default value = 8x8 (written 8,8)
+    
+For this example, I used the default value for clipLimit and specified the number of tiles to be 2,2
+
 ```python
 # convert image to CLAHE object
 clahe = cv2.createCLAHE(tileGridSize=(2,2))
 orig_cl = clahe.apply(orig_grey)
 ```
 
-After converting the image to a CLAHE object, I performed the equalization. As you can see, it takes only two lines of code, which is much more efficient than the previous method. 
+After converting the image to a CLAHE object, I performed the equalization. As you can see, it takes only one line of code, which is much more efficient than the previous method. 
 
 ```python
 # create new equalized image from the clahe original
